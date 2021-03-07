@@ -1,4 +1,5 @@
 ﻿using System;
+using MotorcycleContest.domain;
 
 namespace MotorcycleContest
 {
@@ -6,7 +7,9 @@ namespace MotorcycleContest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            User user = new User("da", "da");
+            user.Id = 3;
+            
         }
     }
 }
