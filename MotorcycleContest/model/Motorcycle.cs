@@ -1,4 +1,4 @@
-﻿namespace MotorcycleContest.domain
+﻿namespace MotorcycleContest.model
 {
     public class Motorcycle : Entity<long>
     {

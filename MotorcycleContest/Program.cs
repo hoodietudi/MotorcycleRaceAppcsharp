@@ -1,5 +1,5 @@
 ﻿using System;
-using MotorcycleContest.domain;
+using MotorcycleContest.model;
 
 namespace MotorcycleContest
 {

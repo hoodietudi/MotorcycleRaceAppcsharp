@@ -1,4 +1,4 @@
-﻿namespace MotorcycleContest.repository.validators
+﻿namespace MotorcycleContest.model.validators
 {
     public interface IValidator<in TE>
     {

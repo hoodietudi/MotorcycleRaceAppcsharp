@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MotorcycleContest.domain
+namespace MotorcycleContest.model
 {
     public class Race : Entity<long>
     {

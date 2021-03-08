@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using MotorcycleContest.domain;
+using MotorcycleContest.model;
 
-namespace MotorcycleContest.repository
+namespace MotorcycleContest.repository.interfaces
 {
     public interface IRepository<in TId, T> where T : Entity<TId>
     {

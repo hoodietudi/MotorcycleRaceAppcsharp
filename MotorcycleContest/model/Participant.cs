@@ -1,6 +1,6 @@
-﻿namespace MotorcycleContest.domain
+﻿namespace MotorcycleContest.model
 {
-    public class Participant
+    public class Participant : Entity<long>
     {
         public string Name { get; set; }
         public Motorcycle Motorcycle { get; set; }

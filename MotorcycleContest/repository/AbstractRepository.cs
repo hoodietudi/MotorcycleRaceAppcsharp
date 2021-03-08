@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using MotorcycleContest.domain;
-using MotorcycleContest.repository.validators;
+using MotorcycleContest.model;
+using MotorcycleContest.model.validators;
+using MotorcycleContest.repository.interfaces;
 
 namespace MotorcycleContest.repository
 {
