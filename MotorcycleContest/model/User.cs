@@ -1,6 +1,6 @@
 ﻿namespace MotorcycleContest.model
 {
-    public class User : Entity<long>
+    public class User : Entity<int>
     {
         public string Username { get; set; }
         public string Password { get; set; }

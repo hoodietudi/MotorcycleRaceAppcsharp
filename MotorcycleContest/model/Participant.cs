@@ -1,6 +1,6 @@
 ﻿namespace MotorcycleContest.model
 {
-    public class Participant : Entity<long>
+    public class Participant : Entity<int>
     {
         public string Name { get; set; }
         public Motorcycle Motorcycle { get; set; }

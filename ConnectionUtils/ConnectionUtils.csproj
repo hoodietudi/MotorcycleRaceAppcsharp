@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net45</TargetFramework>
+        <AssemblyName>DbUtils</AssemblyName>
+        <RootNamespace>DbUtils</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ServiceStack.OrmLite.Sqlite.Mono" Version="4.5.8" />
+    </ItemGroup>
+
+</Project>

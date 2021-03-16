@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Fac\Sem4\MPP\Proiect\C#\MotorcycleContest" t="IncludeFlat">
+      <e p="ConnectionUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ConnectionFactory.cs" t="Include" />
+        <e p="ConnectionUtils.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net45" t="Include">
+              <e p="ConnectionUtils.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="sqlite3.dll" t="Include" />
+        <e p="SqliteConnectionFactory.cs" t="Include" />
+      </e>
+      <e p="MotorcycleContest" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="model" t="Include">
+          <e p="EngineCapacity.cs" t="Include" />
+          <e p="Entity.cs" t="Include" />
+          <e p="Entry.cs" t="Include" />
+          <e p="Motorcycle.cs" t="Include" />
+          <e p="Participant.cs" t="Include" />
+          <e p="Race.cs" t="Include" />
+          <e p="Team.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+          <e p="validators" t="Include">
+            <e p="IValidator.cs" t="Include" />
+            <e p="ValidationException.cs" t="Include" />
+          </e>
+        </e>
+        <e p="MotorcycleContest.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net45" t="Include">
+              <e p="MotorcycleContest.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="repository" t="Include">
+          <e p="DBUtils.cs" t="Include" />
+          <e p="EntryDbRepository.cs" t="Include" />
+          <e p="interfaces" t="Include">
+            <e p="IEntryRepository.cs" t="Include" />
+            <e p="IMotorcycleRepository.cs" t="Include" />
+            <e p="IParticipantRepository.cs" t="Include" />
+            <e p="IRaceRepository.cs" t="Include" />
+            <e p="IRepository.cs" t="Include" />
+            <e p="ITeamRepository.cs" t="Include" />
+            <e p="IUserRepository.cs" t="Include" />
+          </e>
+          <e p="MotorcycleDbRepository.cs" t="Include" />
+          <e p="ParticipantDbRepository.cs" t="Include" />
+          <e p="RaceDbRepository.cs" t="Include" />
+          <e p="RepositoryException.cs" t="Include" />
+          <e p="TeamDbRepository.cs" t="Include" />
+          <e p="UserDbRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="MotorcycleContest.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\radua\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\radua\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_MotorcycleContest.-400469245.00" t="ExcludeRecursive" />
+    <e p="C:\Users\radua\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\radua\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
+  </component>
+</project>

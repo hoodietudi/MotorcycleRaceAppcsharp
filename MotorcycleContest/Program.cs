@@ -1,5 +1,7 @@
 ﻿using System;
 using MotorcycleContest.model;
+using MotorcycleContest.repository;
+using MotorcycleContest.repository.interfaces;
 
 namespace MotorcycleContest
 {
@@ -7,9 +9,9 @@ namespace MotorcycleContest
     {
         static void Main(string[] args)
         {
-            User user = new User("da", "da");
-            user.Id = 3;
-            
+            var UserRepo = new UserDbRepository();
+
+            Console.WriteLine(UserRepo.FilterByUsername("andrei")[0]);
         }
     }
 }

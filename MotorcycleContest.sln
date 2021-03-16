@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotorcycleContest", "MotorcycleContest\MotorcycleContest.csproj", "{1D0A4746-D1E5-4E3A-83A5-8AC1287C067F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionUtils", "ConnectionUtils\ConnectionUtils.csproj", "{E291B52D-B404-4431-8616-3BE9C6D4ECF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{1D0A4746-D1E5-4E3A-83A5-8AC1287C067F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D0A4746-D1E5-4E3A-83A5-8AC1287C067F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D0A4746-D1E5-4E3A-83A5-8AC1287C067F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E291B52D-B404-4431-8616-3BE9C6D4ECF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E291B52D-B404-4431-8616-3BE9C6D4ECF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E291B52D-B404-4431-8616-3BE9C6D4ECF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E291B52D-B404-4431-8616-3BE9C6D4ECF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

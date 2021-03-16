@@ -3,7 +3,7 @@ using MotorcycleContest.model;
 
 namespace MotorcycleContest.repository.interfaces
 {
-    public interface IParticipantRepository : IRepository<long, Participant>
+    public interface IParticipantRepository : IRepository<int, Participant>
     {
         List<Participant> FilterByName(string name);
         

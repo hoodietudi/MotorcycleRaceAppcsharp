@@ -1,6 +1,6 @@
 ﻿namespace MotorcycleContest.model
 {
-    public class Motorcycle : Entity<long>
+    public class Motorcycle : Entity<int>
     {
         public EngineCapacity EngineCapacity { get; set; }
 

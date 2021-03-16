@@ -1,6 +1,6 @@
 ﻿namespace MotorcycleContest.model
 {
-    public class Team : Entity<long>
+    public class Team : Entity<int>
     {
         public string Name { get; set; }
 

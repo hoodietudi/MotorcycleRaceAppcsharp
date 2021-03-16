@@ -2,15 +2,16 @@
 
 namespace MotorcycleContest.model
 {
-    public class Race : Entity<long>
+    public class Race : Entity<int>
     {
-        public List<long> ParticipantsIds { get; set; }
-        public EngineCapacity RequiredEngineCapacity { get; set; }
+       public EngineCapacity RequiredEngineCapacity { get; set; }
+        
+       public string Name { get; set; }
 
-        public Race(List<long> participantsIds, EngineCapacity requiredEngineCapacity)
-        {
-            ParticipantsIds = participantsIds;
-            RequiredEngineCapacity = requiredEngineCapacity;
-        }
+       public Race(EngineCapacity requiredEngineCapacity, string name)
+       {
+           RequiredEngineCapacity = requiredEngineCapacity;
+           Name = name;
+       }
     }
 }
