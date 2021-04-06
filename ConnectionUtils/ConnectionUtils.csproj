@@ -1,13 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net45</TargetFramework>
-        <AssemblyName>DbUtils</AssemblyName>
-        <RootNamespace>DbUtils</RootNamespace>
+        <TargetFramework>net472</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="ServiceStack.OrmLite.Sqlite.Mono" Version="4.5.8" />
+      <PackageReference Include="Stub.System.Data.SQLite.Core.NetFramework" Version="1.0.113.3" />
+      <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0-preview.2.21154.6" />
+      <PackageReference Include="System.Data.SQLite.Core" Version="1.0.113.7" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="System.Configuration" />
     </ItemGroup>
 
 </Project>

@@ -1,6 +1,9 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using DbUtils;
-using Mono.Data.Sqlite;
+using System.Data.SQLite;
+using System.Configuration;
+
 
 namespace ConnectionUtils
 {
@@ -8,8 +11,10 @@ namespace ConnectionUtils
     {
         public override IDbConnection CreateConnection()
         {
-            var connectionString = "URI=file:/Fac/Sem4/MPP/Proiect/Db/MotorcycleContest.db";
-            return new SqliteConnection(connectionString);
+           
+            var conStr = "Data Source=C:\\Fac\\Sem4\\MPP\\Proiect\\Db\\MotorcycleContest.db;Version=3";
+            // var conStr = ConfigurationManager.ConnectionStrings["DbMotor"].ConnectionString;
+            return new SQLiteConnection(conStr);
         }
     }
 }

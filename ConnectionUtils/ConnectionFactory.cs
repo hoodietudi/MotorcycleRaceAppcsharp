@@ -17,8 +17,8 @@ namespace DbUtils
         {
             if (_instance == null)
             {
-                Assembly assembly = Assembly.GetExecutingAssembly();
-                Type[] types = assembly.GetTypes();
+                var assembly = Assembly.GetExecutingAssembly();
+                var types = assembly.GetTypes();
 
                 foreach (var type in types)
                 {
