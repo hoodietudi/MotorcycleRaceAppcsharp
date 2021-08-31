@@ -1,33 +1,29 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Domain.model;
-using Domain.model.validators;
-using MotorcycleContest.service;
 using Services;
 
 namespace Client.gui
 {
     public partial class MainForm : Form
     {
-        private readonly MainController ctrl;
-        private readonly IList<string> usersData; 
+        private readonly MainController _ctrl;
+        public readonly IList<string> usersData; 
         
         public MainForm(MainController ctrl)
         {
             InitializeComponent();
-            this.ctrl = ctrl;
+            this._ctrl = ctrl;
         }
         
         public void LoadData()
         {
-            dataGridViewRace.DataSource = ctrl.GetDtoRaces();
+            dataGridViewRace.DataSource = _ctrl.GetDtoRaces();
             dataGridViewRace.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             
-            var teams = ctrl.GetTeamsNames();
+            var teams = _ctrl.GetTeamsNames();
             comboBoxTeams.DataSource = teams;
             comboBoxTeams.SelectedItem = null;
             
@@ -35,7 +31,7 @@ namespace Client.gui
             comboBoxSelectedTeam.SelectedItem = null;
             
             LoadEngineCapacity();
-            ctrl.updateEvent += participantUpdate;
+            _ctrl.updateEvent += ParticipantUpdate;
         }
         
         private void LoadEngineCapacity()
@@ -49,8 +45,8 @@ namespace Client.gui
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            ctrl.Logout();
-            ctrl.updateEvent -= participantUpdate;
+            _ctrl.Logout();
+            _ctrl.updateEvent -= ParticipantUpdate;
             Application.Exit();
         }
 
@@ -64,7 +60,7 @@ namespace Client.gui
                 return;
             }
             
-            dataGridViewMembers.DataSource = ctrl.GetDtoParticipants(team.ToString());
+            dataGridViewMembers.DataSource = _ctrl.GetDtoParticipants(team.ToString());
             dataGridViewMembers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -83,7 +79,7 @@ namespace Client.gui
             
             try
             {
-                ctrl.AddParticipantEntry(name,
+                _ctrl.AddParticipantEntry(name,
                     team.ToString(), engineCapacity.ToString(), race.Name);
             
                 MessageBox.Show(@"Participant was succesfully added!");
@@ -104,7 +100,7 @@ namespace Client.gui
                 return;
             }
             
-            comboBoxSelectedRace.DataSource = ctrl.RaceByEngineCapacity((EngineCapacity) Enum.Parse(
+            comboBoxSelectedRace.DataSource = _ctrl.RaceByEngineCapacity((EngineCapacity) Enum.Parse(
                 typeof(EngineCapacity), engine.ToString()));
             
             if (comboBoxSelectedRace.Items.Count == 0)
@@ -113,7 +109,7 @@ namespace Client.gui
             }
         }
         
-        public void participantUpdate(object sender, ContestParticipantEventArgs e)
+        public void ParticipantUpdate(object sender, ContestParticipantEventArgs e)
         {
             if (e.ParticipantEventType == ContestParticipantEvent.ParticipantEntryAdded)
             {
@@ -124,23 +120,17 @@ namespace Client.gui
         private void ParticipantAdded()
         {
             var raceNmae = "";
-            ctrl.ParticipantEntryAdded(raceNmae);
-            // BindingList<RaceDTO> races = new BindingList<RaceDTO>();
-            //
-            // foreach (var race in dataGridViewRace.Rows)
-            // {
-            //     Console.WriteLine(race);
-            // }
+            _ctrl.ParticipantEntryAdded(raceNmae);
             dataGridViewRace.BeginInvoke(new LoadRacesCallback(this.LoadRaces));
         }
         
         private void LoadRaces()
         {
             dataGridViewRace.DataSource = null;
-            dataGridViewRace.DataSource = ctrl.GetDtoRaces();
+            dataGridViewRace.DataSource = _ctrl.GetDtoRaces();
             dataGridViewRace.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        public delegate void LoadRacesCallback();
+        private delegate void LoadRacesCallback();
     }
 }

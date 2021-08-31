@@ -85,9 +85,9 @@ namespace Persistance
                     while (dataR.Read())
                     {
                         var id = dataR.GetInt32(0);
-                        var name = dataR.GetString(1);
-                        var mId = dataR.GetInt32(2);
-                        var tId = dataR.GetInt32(3);
+                        var name = dataR.GetString(3);
+                        var mId = dataR.GetInt32(1);
+                        var tId = dataR.GetInt32(2);
 
                         Motorcycle motorcycle = null;
                         
@@ -103,7 +103,7 @@ namespace Persistance
                             {
                                 while (dataRM.Read())
                                 {
-                                    var motorcycleEngineCapacity = dataRM.GetString(0);
+                                    var motorcycleEngineCapacity = dataRM.GetString(1);
                                     
                                     motorcycle = new Motorcycle((EngineCapacity)Enum.Parse(
                                         typeof(EngineCapacity), motorcycleEngineCapacity));
@@ -173,8 +173,8 @@ namespace Persistance
                     while (dataR.Read())
                     {
                         var id = dataR.GetInt32(0);
-                        var name = dataR.GetString(1);
-                        var motorcycleId = dataR.GetInt32(2);
+                        var name = dataR.GetString(3);
+                        var motorcycleId = dataR.GetInt32(1);
 
                         Motorcycle motorcycle = null;
 
@@ -190,10 +190,11 @@ namespace Persistance
                             {
                                 while (dataRM.Read())
                                 {
-                                    var motorcycleEngineCapacity = dataRM.GetString(0);
+                                    var motorcycleEngineCapacity = dataRM.GetString(1);
+                                    Console.WriteLine(motorcycleEngineCapacity);
                                     
-                                    motorcycle = new Motorcycle((EngineCapacity)Enum.Parse(
-                                        typeof(EngineCapacity), motorcycleEngineCapacity));
+                                    //motorcycle = new Motorcycle((EngineCapacity)Enum.Parse(typeof(EngineCapacity), motorcycleEngineCapacity));
+                                    motorcycle = new Motorcycle((EngineCapacity)Enum.Parse(typeof(EngineCapacity), motorcycleEngineCapacity));
                                     motorcycle.Id = motorcycleId;
                                 }
                             }
@@ -226,9 +227,9 @@ namespace Persistance
                     while (dataR.Read())
                     {
                         var id = dataR.GetInt32(0);
-                        var name = dataR.GetString(1);
-                        var mId = dataR.GetInt32(2);
-                        var tId = dataR.GetInt32(3);
+                        var name = dataR.GetString(3);
+                        var mId = dataR.GetInt32(1);
+                        var tId = dataR.GetInt32(2);
 
                         Motorcycle motorcycle = null;
                         
@@ -244,7 +245,7 @@ namespace Persistance
                             {
                                 while (dataRM.Read())
                                 {
-                                    var motorcycleEngineCapacity = dataRM.GetString(0);
+                                    var motorcycleEngineCapacity = dataRM.GetString(1);
                                     
                                     motorcycle = new Motorcycle((EngineCapacity)Enum.Parse(
                                         typeof(EngineCapacity), motorcycleEngineCapacity));

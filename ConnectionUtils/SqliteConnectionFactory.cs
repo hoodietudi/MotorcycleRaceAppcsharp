@@ -12,7 +12,7 @@ namespace ConnectionUtils
         public override IDbConnection CreateConnection()
         {
            
-            var conStr = "Data Source=C:\\Fac\\Sem4\\MPP\\Proiect\\Db\\MotorcycleContest.db;Version=3";
+            var conStr = "Data Source=D:\\UBB\\anul 2\\sem2\\MPP\\motoare.db;Version=3";
             // var conStr = ConfigurationManager.ConnectionStrings["DbMotor"].ConnectionString;
             return new SQLiteConnection(conStr);
         }

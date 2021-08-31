@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Net.Sockets;
 using System.Threading;
-using Domain.model.validators;
 using Networking;
 using Persistance;
-using Persistance.interfaces;
+using protobuf;
 using Services;
 
 namespace Server
 {
-    using Server;
     public class StartServer
     {
         public static void Main(string[] args)
@@ -26,13 +24,13 @@ namespace Server
 
             var motorcycleRepo = new MotorcycleDbRepository();
 
-            IContestServices serviceImpl = new ContestServerImpl(userRepo, 
+            IContestServices server = new ContestServerImpl(userRepo, 
                 raceRepo, entryRepo, teamRepo, participantRepo, motorcycleRepo);
         
-            var server = new SerialContestServer("127.0.0.1",
-                55555, serviceImpl);   
+            //var scs = new ProtoContestServer("127.0.0.1", 55555, server); 
+            SerialContestServer scs = new SerialContestServer("127.0.0.1", 55555, server);
             
-            server.Start();
+            scs.Start();
             Console.WriteLine("Server started...");
             
         }
@@ -55,4 +53,40 @@ namespace Server
             return new Thread(new ThreadStart(_worker.run));
         }
     }
+    
+    
+    public class ProtoContestServer : ConcurrentServer
+    {
+        private readonly IContestServices _server;
+        private ProtoContestWorker _worker;
+        public ProtoContestServer(string host, int port, IContestServices server)
+            : base(host, port)
+        {
+            this._server = server;
+            Console.WriteLine("ProtoContestServer...");
+        }
+
+        protected override Thread CreateWorker(TcpClient client)
+        {
+            _worker = new ProtoContestWorker(_server, client);
+            return new Thread(new ThreadStart(_worker.Run));
+        }
+    }
+    
+    
+    /*public class SerialChatServer: ConcurrentServer 
+    {
+        private IContestServices server;
+        private ContestClientObjectWorker worker;
+        public SerialChatServer(string host, int port, IContestServices server) : base(host, port)
+        {
+            this.server = server;
+            Console.WriteLine("SerialChatServer...");
+        }
+        protected override Thread CreateWorker(TcpClient client)
+        {
+            worker = new ContestClientObjectWorker(server, client);
+            return new Thread(new ThreadStart(worker.run));
+        }
+    }*/
 }

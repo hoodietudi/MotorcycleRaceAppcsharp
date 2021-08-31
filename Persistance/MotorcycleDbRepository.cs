@@ -85,8 +85,8 @@ namespace Persistance
                 {
                     while (dataR.Read())
                     {
-                        var id = dataR.GetInt32(1);
-                        string engine = dataR.GetString(0);
+                        var id = dataR.GetInt32(0);
+                        string engine = dataR.GetString(1);
 
                         motorcycle = new Motorcycle((EngineCapacity) Enum.Parse(
                             typeof(EngineCapacity), engine)) {Id = id};

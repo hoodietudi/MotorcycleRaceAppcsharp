@@ -16,7 +16,7 @@ namespace Client.gui
         
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            var username = textBoxPassword.Text;
+            var username = textBoxUsername.Text;
             var password = textBoxPassword.Text;
 
             try
